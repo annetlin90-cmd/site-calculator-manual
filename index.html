@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f0f1eb">
+  <meta name="description" content="Демонстрационный калькулятор предварительной стоимости разработки сайта с&nbsp;мини-брифом.">
+  <title>Калькулятор стоимости сайта — демоверсия</title>
+  <link rel="preload" href="fonts/Manrope-VariableFont_wght.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/pricing.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="site-shell" id="top">
+    <header class="site-header">
+      <a href="#top" class="wordmark" aria-label="К&nbsp;началу страницы">SITE<span> / </span>CALC<span class="dot">●</span></a>
+      <nav class="header-nav" aria-label="Навигация"><a href="#calculator">Калькулятор</a><a href="#about">Как это работает</a></nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему"><span id="theme-icon" aria-hidden="true">◐</span><span id="theme-name">Тёмная тема</span></button>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР / 01</div>
+        <h1 id="hero-title">СКОЛЬКО БУДЕТ СТОИТЬ <span>ВАШ САЙТ?</span></h1>
+        <div class="hero-steps" aria-label="Как это работает"><span>Выберите тип сайта и&nbsp;дополнительные услуги <b aria-hidden="true">»</b></span><span>Ответьте на&nbsp;вопросы короткого брифа <b aria-hidden="true">»</b></span><span>Стоимость и&nbsp;состав работ обновятся сразу <b class="step-check" aria-hidden="true">✓</b></span></div><div class="hero-gallery" aria-label="Визуальные примеры цифрового дизайна"><img src="images/reference-01.webp" alt="Визуальный пример интерфейса" loading="eager"><img src="images/reference-02.webp" alt="Визуальный пример цифрового взаимодействия" loading="eager"><img src="images/reference-03.webp" alt="Абстрактный интерфейс в&nbsp;зелёных оттенках" loading="eager"><img src="images/reference-04.webp" alt="Рабочее место веб-разработчика" loading="eager"></div>
+        <div class="hero-bottom"><a class="button button-primary button-arrow" href="#calculator">Рассчитать предварительную стоимость <span class="arrow-circle" aria-hidden="true">↓</span></a></div>
+      </section>
+      <section class="calculator-section" id="calculator" aria-labelledby="calculator-title">
+        <div class="section-heading"><div><span class="eyebrow">КОНФИГУРАТОР / 02</span><h2 id="calculator-title">Соберите свой проект</h2></div><span class="section-tag">за&nbsp;5 простых шагов</span></div>
+        <div class="calculator-layout">
+          <form class="question-column" id="calculator-form">
+            <fieldset class="panel"><legend><span class="step">01</span> Тип сайта</legend><p class="field-help">Выберите один вариант. Базовая стоимость зависит от&nbsp;типа сайта.</p><div class="site-types" id="site-types"></div></fieldset>
+            <fieldset class="panel"><legend><span class="step">02</span> Масштаб проекта</legend><p class="field-help" id="scale-help">Примерный объём работ</p><div class="choice-list" id="scale-options"></div><p class="hint">Объём фиксируется в&nbsp;брифе. Автоматическая доплата за&nbsp;него пока не&nbsp;настроена.</p></fieldset>
+            <fieldset class="panel"><legend><span class="step">03</span> Материалы</legend><div class="field-group"><span class="group-label" id="content-label">Есть ли готовые тексты?</span><div class="segmented" role="group" aria-labelledby="content-label"><label><input type="radio" name="texts" value="Готовы"><span>Готовы</span></label><label><input type="radio" name="texts" value="Частично готовы"><span>Частично</span></label><label><input type="radio" name="texts" value="Нужна помощь"><span>Нужна помощь</span></label></div></div><div class="field-group"><span class="group-label" id="photos-label">Есть ли фотографии и&nbsp;изображения?</span><div class="segmented" role="group" aria-labelledby="photos-label"><label><input type="radio" name="photos" value="Готовы"><span>Готовы</span></label><label><input type="radio" name="photos" value="Частично готовы"><span>Частично</span></label><label><input type="radio" name="photos" value="Нужна помощь"><span>Нужна помощь</span></label></div></div></fieldset>
+            <fieldset class="panel"><legend><span class="step">04</span> Дополнительные услуги</legend><p class="field-help">Дополнения зависят от&nbsp;типа сайта. Выберите нужные — сумма изменится автоматически.</p><div class="extra-list" id="extra-options"></div><button type="button" id="no-extras" class="mini-action">Дополнительные услуги не&nbsp;нужны</button></fieldset>
+            <fieldset class="panel"><legend><span class="step">05</span> Особенности проекта</legend><label class="group-label" for="project-notes">Что ещё нужно учесть? <span class="optional">Необязательно</span></label><textarea id="project-notes" name="notes" maxlength="1200" rows="4" placeholder="Например, особые функции, сроки, ссылки на&nbsp;примеры..."></textarea><button type="button" id="skip-notes" class="mini-action">Пропустить шаг</button><p class="skip-status" id="skip-status" role="status"></p></fieldset>
+            <div class="form-footer"><button type="reset" class="button button-outline">Сбросить параметры ↺</button><span>Никаких данных на&nbsp;сервер не&nbsp;отправляется</span></div>
+          </form>
+          <aside class="summary-column" aria-label="Текущая стоимость"><div class="summary-card"><span class="eyebrow">ВАШ РАСЧЁТ / LIVE</span><p class="summary-caption">Предварительная стоимость</p><div class="price" id="total-price" aria-live="polite">Выберите тип сайта</div><div class="summary-rule"></div><div class="summary-row"><span>Тип сайта</span><strong id="summary-type">Не&nbsp;выбран</strong></div><div class="summary-row"><span>Базовая стоимость</span><strong id="base-price">—</strong></div><div id="summary-extras" class="summary-extras"></div><p class="summary-note">Это демонстрационный расчёт. Доплаты условные; окончательная цена определяется после обсуждения задачи.</p><button type="button" class="button button-primary button-arrow summary-action" id="show-brief">Получить сводку <span class="arrow-circle" aria-hidden="true">↗</span></button></div><div class="progress-widget" aria-label="Прогресс заполнения брифа"><span class="eyebrow">ЗАПОЛНЕНИЕ БРИФА</span><div class="progress-row"><div class="progress-track" role="progressbar" aria-label="Заполнено разделов" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track"><div id="progress-fill" class="progress-fill"></div></div><strong id="progress-percent">0%</strong></div><span class="progress-caption" id="progress-caption">Отметьте параметры проекта</span></div></aside>
+        </div>
+      </section>
+      <section class="info-grid" id="about" aria-label="Информация о&nbsp;расчёте"><article class="info-card"><span class="eyebrow">01 / СОСТАВ РАБОТ</span><h2>Что входит в&nbsp;разработку?</h2><p>Состав базового пакета зависит от&nbsp;выбранного типа сайта. Его можно посмотреть прямо здесь.</p><h3 id="included-title">Выберите тип сайта</h3><ul id="included-list"></ul></article><article class="info-card info-card-accent"><span class="eyebrow">02 / ПРИНЦИП РАСЧЁТА</span><h2>Прозрачная логика</h2><p>Базовая стоимость + выбранные опции с&nbsp;тестовыми доплатами. Масштаб проекта и&nbsp;готовность материалов записываются в&nbsp;бриф, но&nbsp;не&nbsp;получают выдуманных надбавок.</p><div class="formula" aria-label="База плюс опции равно ориентир"><span class="formula-chip">База</span><span class="formula-sign">+</span><span class="formula-chip">Опции</span><span class="formula-sign">=</span><span class="formula-chip formula-result">Ориентир</span></div></article></section>
+      <section class="closing"><span class="eyebrow">ПОСЛЕ РАСЧЁТА / 03</span><h2>ГОТОВЫ ОБСУДИТЬ <em>ПРОЕКТ?</em></h2><div class="closing-bottom"><p>Соберите параметры и&nbsp;скопируйте сводку. Пока это учебный прототип — без&nbsp;отправки заявок и&nbsp;сбора контактов.</p><a href="#calculator" class="button button-light button-arrow">К&nbsp;калькулятору <span class="arrow-circle" aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="footer"><span>SITE / CALC</span><span>DEMO PROJECT · 2026</span><a href="#top">НАВЕРХ ↑</a></footer>
+  </div>
+  <div class="mobile-price" id="mobile-price"><span>Предварительно <strong id="mobile-total">Выберите тип сайта</strong></span><button type="button" id="mobile-brief" aria-label="Открыть сводку">Сводка ↗</button></div>
+  <dialog class="brief-dialog" id="brief-dialog" aria-labelledby="brief-title"><div class="dialog-head"><div><span class="eyebrow">ВАШ ПРОЕКТ / ИТОГ</span><h2 id="brief-title">Сводка проекта</h2></div><button id="close-brief" type="button" class="icon-button" aria-label="Закрыть сводку">✕</button></div><p class="dialog-description">Проверьте выбранные параметры и&nbsp;скопируйте текст. Ничего автоматически не&nbsp;отправляется.</p><pre id="brief-text" class="brief-text"></pre><div class="dialog-actions"><button type="button" id="copy-brief" class="button button-primary button-arrow">Скопировать бриф <span class="arrow-circle" aria-hidden="true">↗</span></button><button type="button" id="back-brief" class="button button-outline">Вернуться к&nbsp;настройкам</button></div><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></dialog>
+</body>
+</html>
